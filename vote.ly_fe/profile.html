@@ -1,159 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
 
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- NAVBAR -->
-    <div class="navbar bg-base-100">
-        <div class="flex-1">
-          <a href="index.html"  class="btn btn-ghost text-xl">VOTE.LY</a>
-        </div>
-        <div class="flex-none gap-2">
-          <div class="form-control">
-            <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-          </div>
-          <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-              <div class="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
+    <div class="navbar bg-black text-white">
+      <div class="flex-1">
+        <a href="index.html" class="btn btn-ghost text-xl">VOTE.LY</a>
+      </div>
+      <div class="flex-none gap-2">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
             </div>
-            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-              <li>
-                <a class="justify-between">
-                  Profile
-                </a>
-              </li>
-              <li><a>Settings</a></li>
-              <li class="text-error"><a>Logout</a></li>
-            </ul>
           </div>
+          <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 text-black">
+            <li>
+              <a class="justify-between"> Profile </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li class="text-error"><a>Logout</a></li>
+          </ul>
         </div>
       </div>
+    </div>
     <!-- NAVBAR END -->
     <!-- EDIT PROFILE -->
+    <br />
     <div class="flex justify-center">
-        <div class="avatar">
-            <div class="w-24 rounded-full">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-            </div>
-          </div>
-          
+      <div class="avatar">
+        <div class="w-24 rounded-full">
+          <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        </div>
+      </div>
     </div>
     <div class="flex justify-center">
-<!-- Link untuk memicu pemilihan file -->
-<p><a href="#" id="changeImageLink">Change image</a></p>
+      <!-- Link untuk memicu pemilihan file -->
+      <p><a href="#" id="changeImageLink">Change image</a></p>
 
-<!-- Elemen input file yang tersembunyi -->
-<input type="file" id="fileInput" style="display:none;" accept="image/*">
+      <!-- Elemen input file yang tersembunyi -->
+      <input type="file" id="fileInput" style="display: none" accept="image/*" />
 
-<!-- Tempat menampilkan gambar yang dipilih -->
-<img id="displayImage" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Display Image" style="max-width: 300px;">
+      <!-- Tempat menampilkan gambar yang dipilih -->
+      <img id="displayImage" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Display Image" style="max-width: 300px" />
 
-<script>
-  // Dapatkan elemen link dan input
-  const changeImageLink = document.getElementById('changeImageLink');
-  const fileInput = document.getElementById('fileInput');
-  const displayImage = document.getElementById('displayImage');
+      <script>
+        // Dapatkan elemen link dan input
+        const changeImageLink = document.getElementById("changeImageLink");
+        const fileInput = document.getElementById("fileInput");
+        const displayImage = document.getElementById("displayImage");
 
-  // Tambahkan event listener pada link untuk memicu input file ketika diklik
-  changeImageLink.addEventListener('click', function(event) {
-    event.preventDefault();  // Hentikan link dari navigasi
-    fileInput.click();       // Pemicu klik pada input file
-  });
+        // Tambahkan event listener pada link untuk memicu input file ketika diklik
+        changeImageLink.addEventListener("click", function (event) {
+          event.preventDefault(); // Hentikan link dari navigasi
+          fileInput.click(); // Pemicu klik pada input file
+        });
 
-  // Tambahkan event listener untuk menghandle perubahan input file 
-  fileInput.addEventListener('change', function() {
-    if (this.files && this.files[0]) {
-      // Membaca file yang dipilih pengguna
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        // Setel src dari gambar untuk menampilkan gambar yang dipilih
-        displayImage.src = e.target.result;
-      };
-      reader.readAsDataURL(this.files[0]); // Konversi gambar ke Data URL
-    }
-  });
-</script>
-
+        // Tambahkan event listener untuk menghandle perubahan input file
+        fileInput.addEventListener("change", function () {
+          if (this.files && this.files[0]) {
+            // Membaca file yang dipilih pengguna
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              // Setel src dari gambar untuk menampilkan gambar yang dipilih
+              displayImage.src = e.target.result;
+            };
+            reader.readAsDataURL(this.files[0]); // Konversi gambar ke Data URL
+          }
+        });
+      </script>
     </div>
-   <br>
+    <br />
     <div class="flex justify-center">
-        
-    <label class="form-control w-full max-w-xs">
+      <label class="form-control w-full max-w-xs">
         <div class="label">
           <span class="label-text">Username</span>
         </div>
         <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-        <div class="label">
-        </div>
+        <div class="label"></div>
       </label>
     </div>
 
     <div class="flex justify-center">
-        
-        <label class="form-control w-full max-w-xs">
-            <div class="label">
-              <span class="label-text">Email</span>
-            </div>
-            <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-            <div class="label">
-            </div>
-          </label>
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">Email</span>
         </div>
-        <div class="flex justify-center">
-        
-            <label class="form-control w-full max-w-xs">
-                <div class="label">
-                  <span class="label-text">Handphone</span>
-                </div>
-                <input type="text" placeholder="+62" class="input input-bordered w-full max-w-xs" />
-                <div class="label">
-                </div>
-              </label>
-            </div>
-        <div class="flex justify-center">
-        
-            <label class="form-control w-full max-w-xs">
-                <div class="label">
-                  <span class="label-text">Change Password</span>
-                </div>
-                <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                <div class="label">
-                </div>
-              </label>
-            </div>
-            <div class="flex justify-center">
-        
-                <label class="form-control w-full max-w-xs">
-                    <div class="label">
-                      <span class="label-text">Confirm Password</span>
-                    </div>
-                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                    <div class="label">
-                    </div>
-                  </label>
-                </div>
-                <div class="flex justify-center">
-                    <button class="btn btn-primary">Update</button>
+        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+        <div class="label"></div>
+      </label>
+    </div>
+    <div class="flex justify-center">
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">Handphone</span>
+        </div>
+        <input type="text" placeholder="+62" class="input input-bordered w-full max-w-xs" />
+        <div class="label"></div>
+      </label>
+    </div>
+    <div class="flex justify-center">
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">Change Password</span>
+        </div>
+        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+        <div class="label"></div>
+      </label>
+    </div>
+    <div class="flex justify-center">
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">Confirm Password</span>
+        </div>
+        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+        <div class="label"></div>
+      </label>
+    </div>
+    <div class="flex justify-center">
+      <button class="btn bg-black text-white">Update</button>
+    </div>
 
-                </div>
+    <br />
 
-              
-    
-                
-        
-
-    
     <!-- EDIT PROFILE END -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-</body>
+  </body>
 </html>

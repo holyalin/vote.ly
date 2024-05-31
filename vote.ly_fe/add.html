@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
 
-    <title>Document</title>
+    <title>CREATE POLLING</title>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -50,39 +50,64 @@
     </div>
 
     <!-- NAVBAR END -->
-    <h1 class="font-bold text-3xl">MENAMBAHKAN VOTE</h1>
-    <h1 class="font-bold text-xl">PILIHAN 1</h1>
-    <h1 class="font-bold">NAMA</h1>
+    <div class="d-flex justify-center text-center mt-5 mb-5">
+      <h1 class="font-bold text-5xl">Menambahkan Polling</h1>
+    </div>
 
-    <label class="input input-bordered flex items-center gap-2">
-      <input type="text" class="grow" placeholder="Search" />
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
-        <path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" />
-      </svg>
-    </label>
-    <h1 class="font-bold">GAMBAR</h1>
+    <!-- MODAL -->
+    <!-- Open the modal using ID.showModal() method -->
+    <div class="flex justify-center">
+      <button class="btn" onclick="my_modal_2.showModal()">Tambah</button>
+      <dialog id="my_modal_2" class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">Masukkan pilihan</h3>
 
-    <label class="input input-bordered flex items-center gap-2">
-      <input type="file" class="grow" accept="image/*" placeholder="Upload Photo" />
-    </label>
-    <br />
-    <button class="btn btn-primary">Submit</button>
-    <br />
-    <h1 class="font-bold text-xl">PILIHAN 1</h1>
-    <h1 class="font-bold">NAMA</h1>
+          <!-- POLLING -->
 
-    <label class="input input-bordered flex items-center gap-2">
-      <input type="text" class="grow" placeholder="Search" />
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
-        <path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" />
-      </svg>
-    </label>
-    <h1 class="font-bold">GAMBAR</h1>
+          <div class="mb-2 mt-5 flex justify-center">
+            <h1 class="font-bold text-xl">Kategori</h1>
+          </div>
 
-    <label class="input input-bordered flex items-center gap-2">
-      <input type="file" class="grow" accept="image/*" placeholder="Upload Photo" />
-    </label>
-    <button class="btn btn-primary">Submit</button>
+          <div class="form-control flex justify-center">
+            <div class="flex justify-center">
+              <select id="category" class="select select-bordered w-full max-w-xs">
+                <option disabled selected>Pilih Kategori</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-2 mt-5 flex justify-center">
+            <h1 class="font-bold text-xl">Nama</h1>
+          </div>
+          <div class="flex justify-center">
+            <label class="input input-bordered flex w-96 items-center gap-1 justify-center">
+              <input type="text" class="grow" placeholder="Isi nama..." />
+            </label>
+          </div>
+
+          <div class="flex justify-center mt-2 mb-2">
+            <h1 class="font-bold text-xl">Gambar</h1>
+          </div>
+          <div class="flex justify-center">
+            <label class="input input-bordered flex w-96 items-center gap-2">
+              <input type="file" class="grow" accept="image/*" placeholder="Upload Photo" />
+            </label>
+          </div>
+
+          <br />
+          <div class="flex justify-center">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+          <!-- POLLING END -->
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+    </div>
+
+    <!-- MODAL END-->
+
     <script src="https://cdn.tailwindcss.com"></script>
   </body>
 </html>
