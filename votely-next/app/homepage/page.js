@@ -13,8 +13,10 @@ export default function Login() {
 
         <div className="navbar-end"></div>
       </div>
+      <br></br>
+      <h1 class="flex justify-center font-bold text-5xl mb-5">Polling Terkini</h1>
 
-      <div class="flex justify-center  space-x-4 p-4">
+      <div class="flex justify-center space-x-4 p-4">
         <div class="card w-96 bg-base-100 shadow-xl">
           <figure>
             <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
@@ -23,7 +25,7 @@ export default function Login() {
             <h2 class="card-title">BATMAN VS SUPERMAN!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
-              <a href="/vote" class="btn bg-black text-white">
+              <a href="/vote" class="btn btn-neutral bg-black text-white">
                 Vote Now
               </a>
             </div>
@@ -31,7 +33,7 @@ export default function Login() {
         </div>
       </div>
       <div class="flex justify-center">
-        <a href="/opt" class="btn bg-black text-white">
+        <a href="/opt" class="btn btn-neutral bg-black text-white">
           Buat Polling
         </a>
       </div>

@@ -10,19 +10,13 @@ export default function Home() {
             VOTELY
           </a>
         </div>
-
-        <div className="navbar-end">
-          <a className="btn" href="#">
-            Login
-          </a>
-        </div>
       </div>
       <div class="hero min-h-screen bg-base-200">
         <div class="hero-content text-center">
           <div class="max-w-md">
             <h1 class="text-5xl font-bold">MARI LAKUKAN VOTING</h1>
             <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <a href="/login" class="btn bg-black text-white">
+            <a href="/login" class="btn btn-neutral bg-black text-white">
               Get Started
             </a>
           </div>
