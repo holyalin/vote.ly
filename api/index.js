@@ -4,17 +4,13 @@ const app = express();
 const port = 3001; // atau port lain yang tersedia
 const mysql = require("mysql");
 const { PrismaClient } = require("@prisma/client");
-
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "votely",
-});
+const { login } = require("./controller/authController");
+require('dotenv').config()
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+app.get("/login", login);
 // Middleware untuk parsing body JSON
 app.use(bodyParser.json());
 
